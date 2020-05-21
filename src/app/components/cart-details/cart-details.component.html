@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-lg-3">
+    <br />
+    <book-category></book-category>
+  </div>
+  <br />
+  <div class="col-md-9 mt-2">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead class="bg-dark text-light">
+            <tr>
+              <td width="20%">Book Image</td>
+              <td width="50%">Book Details</td>
+              <td width="30%"></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cartItem of cartItems">
+              <td>
+                <img
+                  src="{{ cartItem.imageUrl }}"
+                  class="img-responsive"
+                  width="150"
+                  height="200"
+                  alt="Book Image"
+                />
+              </td>
+              <td>
+                <p>{{ cartItem.name }}</p>
+                <p>{{ cartItem.unitPrice | currency: "USD" }}</p>
+              </td>
+              <td>
+                <div class="row">
+                  <div class="col-md-12">
+                    <p>{{ cartItem.quantity }}</p>
+                  </div>
+                  <div class="col-md-12 mt-2">
+                    <p>
+                      {{
+                        cartItem.unitPrice * cartItem.quantity | currency: "USD"
+                      }}
+                    </p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td class="font-weight-bold">
+                <p>Total Quantity: {{ totalQuantity }}</p>
+                <p>Shipping: Free</p>
+                <p>Total Price: {{ totalPrice | currency: "USD" }}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
