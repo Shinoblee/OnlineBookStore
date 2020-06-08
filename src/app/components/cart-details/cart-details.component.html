@@ -77,6 +77,13 @@
                   <p>Total Quantity: {{ totalQuantity }}</p>
                   <p>Shipping: Free</p>
                   <p>Total Price: {{ totalPrice | currency: "USD" }}</p>
+                  <button
+                    *ngIf="totalQuantity > 0"
+                    routerLink="/checkout"
+                    class="btn btn-primary"
+                  >
+                    Checkout
+                  </button>
                 </td>
               </tr>
             </tbody>

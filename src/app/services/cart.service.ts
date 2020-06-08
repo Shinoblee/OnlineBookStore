@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { CartItem } from "../common/cart-item";
 import { Subject } from "rxjs";
+import { SlicePipe } from "@angular/common";
 
 @Injectable({
   providedIn: "root",
