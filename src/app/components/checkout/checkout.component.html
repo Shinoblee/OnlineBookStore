@@ -277,7 +277,7 @@
                     class="custom-select d-block w-100"
                   >
                     <option value="">Choose...</option>
-                    <option>Month</option>
+                    <option *ngFor="let month of months">{{ month }}</option>
                   </select>
                 </div>
                 <div class="col-md-4">
@@ -290,7 +290,7 @@
                       class="custom-select d-block w-100"
                     >
                       <option value="">Choose...</option>
-                      <option>Year</option>
+                      <option *ngFor="let year of years">{{ year }}</option>
                     </select>
                   </div>
                 </div>
